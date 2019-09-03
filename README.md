@@ -1,9 +1,21 @@
 ![alt text](https://raw.githubusercontent.com/samanseifi/pyStaticA/master/logo.png "Logo Title Text 1")
 
-pyStaticA is a simple engineering code for analysing froce-displacement type data from performance testing of mechanical constructs or materials testings such as tensile, bending, torsion etc where the charachterstic curve has a linear portion followed by a
-non-linear portion with a yield point defined as the limit of linear portion.
+pyStaticA: A simple engineering code for analysing froce-displacement type data from either performance testing of mechanical constructs or materials testings such as tensile, bending, torsion etc where the charachterstic curve has a linear portion with a well defined mudulus followed by a non-linear portion with a yield point defined as the limit of linear portion. This type of response is quite common in industrial design such as in aerospace, medical devices etc.
 
-The method for finidng the yield is the offset method with the amount is given as an input by the user.
+The method for finidng the yield is the offset method with the amount `offset value` given as an input by the user into the input file.
+
+The code takes a text file as an input with multiple lines. Each line must have the following format:
+
+| filename | offset value | x-val1 | x-val2 |
+
+filename: 
+
+offset value: 
+
+x-val1:
+
+x-val2:
+
 
 The software takes an input file contatins line of information linking xy-data in `csv` to the given offset points.
 
