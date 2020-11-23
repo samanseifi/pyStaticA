@@ -29,7 +29,7 @@ if __name__ == "__main__":
         output_result = analysis.full_analysis(card)
         list_results.append(output_result)
 
-    print(list_results[0].ss)
+    print(list_results[0])
     # Step 3: Create a gorgeous report!
     # Generate the report based on result list
     reportmaker.make_full_report(list_results)
