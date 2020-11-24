@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     # Step 0: Read the file from command line!
     filename = sys.argv[-1]
-    print("Loading", filename,"...")
+    print("Loading", filename, "...")
 
     # Step 1: Parsing the input file
     # Should be a list of cards with inputs and the reporting style

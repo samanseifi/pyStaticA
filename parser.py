@@ -5,27 +5,30 @@ Created on Thu Aug 29 15:57:28 2019
 @author: Saman Seifi, PhD
 @company: DePuy Synthes
 """
+
+
 class AnalysisInput:
     """ This class contains filename of the input data, offset value,
     x1 and x2 points for calculating stiffness"""
+
     def __init__(self, filename, offset, x1, x2):
         self.filename = filename
-        self.offset   = float(offset)
-        self.x1       = float(x1)
-        self.x2       = float(x2)
+        self.offset = float(offset)
+        self.x1 = float(x1)
+        self.x2 = float(x2)
 
 
 def line_parser(line):
     """ Take the line (as string) parsed from input file
-        Spliting the line into tokens the format should be:
+        Splitting the line into tokens the format should be:
         filename(string) offset(float) x1(float) x2(float) and return as a class"""
 
-    # Spliting line to tokens of filename, offset etc.
+    # Splitting line to tokens of filename, offset etc.
     line_tokens = line.split(" ")
 
     # Create a class
     for token in line_tokens:
-         line_input_data = AnalysisInput(line_tokens[0], line_tokens[1], line_tokens[2], line_tokens[3])
+        line_input_data = AnalysisInput(line_tokens[0], line_tokens[1], line_tokens[2], line_tokens[3])
     return line_input_data
 
 
