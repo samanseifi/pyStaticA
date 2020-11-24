@@ -23,3 +23,4 @@ Plotting example shows the offset line, and the points for calculating the stiff
 
 <img src="https://raw.githubusercontent.com/samanseifi/pyStaticA/master/plot0.png" width="400">
 <img src="https://raw.githubusercontent.com/samanseifi/pyStaticA/master/plot1.png" width="400">
+
