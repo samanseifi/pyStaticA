@@ -9,17 +9,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_xy_data(result):
+def plot_xy_data(result, filename):
     """ This function generates a plot data points, stiffness slope, offset line """
 
     # Preparing for single plot
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
+
     # Getting the xy data
     xy_data = result.xy_data
     x = xy_data[:, 0]
     y = xy_data[:, 1]
+
+    plt.ylim(0, max(y))
+    plt.xlim(0, max(x))
 
     # Plotting xy data
     ax.plot(x, y, 'r')
@@ -51,6 +55,6 @@ def plot_xy_data(result):
 
     ax.set_xlabel(result.x_title)
     ax.set_ylabel(result.y_title)
-    fig.savefig("plot1.png")
+    fig.savefig(filename + ".png")
 
     return ax

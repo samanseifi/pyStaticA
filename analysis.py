@@ -90,7 +90,7 @@ def extract_xy_data(filename):
     headers_list = list(xy_data.columns.values)
 
     if len(headers_list) > 2:
-        print("ERROR: x-y data file contains more than two columns!")
+        print("ERROR: x-y data file contains more than two columns! Only first two columns are considered.")
 
     # The x-axis label and y-axis label are taken from the first rows of the xy data
     x_title = headers_list[0]
