@@ -19,10 +19,10 @@ if __name__ == "__main__":
     print("Loading", filename, "...")
 
     # Step 1: Parsing the input file
-    # Should be a list of cards with inputs and the reporting style
+    # Should be a list of cards with inputs and the (TODO: reporting style)
     input_cards = parser.parse(filename)
 
-    # Step 2: Run analysis over on input data
+    # Step 2: Run analysis over input cards data
     # Loop over input cards and list the results for report making
     list_results = []
     for card in input_cards:
@@ -32,3 +32,4 @@ if __name__ == "__main__":
     # Step 3: Create a gorgeous report!
     # Generate the report based on result list
     reportmaker.make_full_report(list_results)
+

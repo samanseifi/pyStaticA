@@ -9,52 +9,70 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_xy_data(result, filename):
-    """ This function generates a plot data points, stiffness slope, offset line """
+class Plotter:
+    def __init__(self, result_data, file_name):
+        self.result = result_data
+        self.filename = file_name
 
-    # Preparing for single plot
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
+    def extract_xy(self):
+        # Getting the xy data
+        xy_data = self.result.xy_data
+        x = xy_data[:, 0]
+        y = xy_data[:, 1]
 
+        return x, y
 
-    # Getting the xy data
-    xy_data = result.xy_data
-    x = xy_data[:, 0]
-    y = xy_data[:, 1]
+    def plot_xy_data(self, x_title=None, y_title=None):
+        """ This function generates a plot data points, stiffness slope, offset line """
 
-    plt.ylim(0, max(y))
-    plt.xlim(0, max(x))
+        # Preparing for single plot
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
 
-    # Plotting xy data
-    ax.plot(x, y, 'r')
+        # Getting the xy data
+        x, y = self.extract_xy()
 
-    # Calculate the stiffness line
-    XY = result.stiffness_line()
-    max_index = np.argmax(y)
+        plt.ylim(0, max(y)+0.1*max(y))
+        plt.xlim(0, max(x))
 
-    # Plotting stiffness line
-    ax.plot(XY[0:max_index, 0], XY[0:max_index, 1], 'k', linewidth=1)
+        # Plotting xy data
+        ax.plot(x, y, 'r')
 
-    # Calculate the offset line
-    XY_offset = result.offset_line()
+        # Calculate the stiffness line
+        XY = self.result.stiffness_line()
+        max_index = np.argmax(y)
 
-    # Plotting the offset line
-    ax.plot(XY_offset[0:max_index, 0], XY_offset[0:max_index, 1], 'g', linewidth=1)
+        # Plotting stiffness line
+        ax.plot(XY[0:max_index, 0], XY[0:max_index, 1], 'k', linewidth=1)
 
-    # Getting the points of the stiffness line
-    point1 = result.point1
-    point2 = result.point2
+        # Calculate the offset line
+        XY_offset = self.result.offset_line()
 
-    # Plotting points
-    ax.plot(point1.x, point1.y, 'ro', markersize='5',
-            markerfacecolor='red', markeredgewidth='1',
-            markeredgecolor='k')
-    ax.plot(point2.x, point2.y, 'ro', markersize='5',
-            markerfacecolor='red', markeredgewidth='1',
-            markeredgecolor='k')
+        # Plotting the offset line
+        ax.plot(XY_offset[0:max_index, 0], XY_offset[0:max_index, 1], 'g', linewidth=1)
 
-    ax.set_xlabel(result.x_title)
-    ax.set_ylabel(result.y_title)
-    fig.savefig(filename + ".png")
+        # Getting the points of the stiffness line
+        point1 = self.result.point1
+        point2 = self.result.point2
 
-    return ax
+        # Plotting points
+        ax.plot(point1.x, point1.y, 'ro', markersize='5',
+                markerfacecolor='red', markeredgewidth='1',
+                markeredgecolor='k')
+        ax.plot(point2.x, point2.y, 'ro', markersize='5',
+                markerfacecolor='red', markeredgewidth='1',
+                markeredgecolor='k')
+
+        if x_title is None:
+            ax.set_xlabel(self.result.x_title)
+        else:
+            ax.set_xlabel(x_title)
+
+        if y_title is None:
+            ax.set_ylabel(self.result.y_title)
+        else:
+            ax.set_ylabel(y_title)
+
+        fig.savefig(self.filename + "_xy" + ".png")
+
+        return ax
