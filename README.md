@@ -1,8 +1,8 @@
 ![alt text](https://raw.githubusercontent.com/samanseifi/pyStaticA/master/logo.png "Logo Title Text 1")
 
-**pyStatic** A is a simple engineering code for analysing any kind of force-displacement data that can be coming from in-_situe_ or in-_silico_ testing of mechanical constructs or materials characterization testings such as tensile, bending, torsion etc where the charachterstic curve has a linear portion with a well defined mudulus followed by a non-linear portion with a yield point defined as the limit of linear portion. This type of response is quite common in industrial design such as in aerospace, medical devices etc.
+**pyStatic** is a simple engineering code for analysing any kind of force vs. displacement data that can be coming from in-_situe_ or in-_silico_ testing of mechanical constructs or even from materials characterization testings such as tensile, bending and torsion where the charachterstic curve has a linear portion with a well defined mudulus followed by a non-linear portion with a yield point defined as the limit of linear portion. This type of response is quite common in testing single and multi-component constructs such as in aerospace and medical device industry.
 
-The method for finidng the yield is the offset method with the amount `offset-value` given as an input by the user into the input file. The modulus (a.k.a stiffness) is calculated based on two given points hopefully on the linear part of the curve with `x` values of `x-val1` and `x-val2`.
+The method for finidng the yield is the offset method with the value `<offset-value>` given as an input by the user into the input file. The modulus (a.k.a stiffness) is calculated based on two given points chosen by the user to be on the linear part of the curve. Only the`x` values of are entered as inputs: `<x-val1>` and `<x-val2>`.
 
 The code takes a text file as an input with multiple lines. Each line must have the following format:
 
