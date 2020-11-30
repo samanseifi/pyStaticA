@@ -21,6 +21,10 @@ The software takes an input file contains line of information linking xy-data in
 
 Plotting example shows the offset line, and the points for calculating the stiffness:
 
-<img src="https://raw.githubusercontent.com/samanseifi/pyStaticA/master/plot0.png" width="400">
+First Header | Second Header
+------------ | -------------
+<img src="https://raw.githubusercontent.com/samanseifi/pyStaticA/master/plot0.png" width="400">| 
 <img src="https://raw.githubusercontent.com/samanseifi/pyStaticA/master/plot1.png" width="400">
+
+ | Content in the second column
 
