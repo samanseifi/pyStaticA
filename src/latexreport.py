@@ -33,7 +33,6 @@ def generate_unique():
             logo_wrapper.append(StandAloneGraphic(image_options="width=100px",
                                                   filename=logo_file))
 
-
     with doc.create(Section('Analysis Information')):
         with doc.create(Tabular('|l|l|l|l|')) as table1:
             table1.add_hline()
@@ -41,7 +40,8 @@ def generate_unique():
             table1.add_hline()
             table1.add_row(('Test Description:', MultiColumn(3, align='|l|', data='Torque to Failure'),))
             table1.add_hline()
-            table1.add_row(('Part Description:', MultiColumn(3, align='|l|', data='Cornerstone Polyaxial Screw Build 1'),))
+            table1.add_row(
+                ('Part Description:', MultiColumn(3, align='|l|', data='Cornerstone Polyaxial Screw Build 1'),))
             table1.add_hline()
             table1.add_row(('Test Date:', MultiColumn(3, align='|l|', data='24 Dec, 2020'),))
             table1.add_hline()
@@ -63,7 +63,6 @@ def generate_unique():
 
         doc.append(LineBreak())
         doc.append(LineBreak())
-
 
         with doc.create(Tabular('|l|l|l|l|')) as table2:
             table2.add_hline()
