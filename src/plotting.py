@@ -63,11 +63,13 @@ class Plotter:
                 markerfacecolor='red', markeredgewidth='1',
                 markeredgecolor='k')
 
+        # Assigning the x_title
         if x_title is None:
             ax.set_xlabel(self.result.x_title)
         else:
             ax.set_xlabel(x_title)
 
+        # Assigning the y_title
         if y_title is None:
             ax.set_ylabel(self.result.y_title)
         else:

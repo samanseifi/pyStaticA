@@ -13,9 +13,9 @@ import os
 
 
 class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, x0, y0):
+        self.x = x0
+        self.y = y0
 
 
 class AnalysisOutput:
@@ -151,7 +151,8 @@ def calculate_yield_point(xy_data, offset, point1, point2):
 
     yield_point = Point(x_yield, y_yield)
 
-    return x, y, y_offset, yield_point
+    # return x, y, y_offset, yield_point
+    return yield_point
 
 
 def find_ultimate_point(xy_data):

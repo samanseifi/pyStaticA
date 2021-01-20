@@ -24,12 +24,12 @@ if __name__ == "__main__":
 
     # Step 2: Run analysis over input cards data
     # Loop over input cards and list the results for report making
-    list_results = []
+    list_output_results = []
     for card in input_cards:
         output_result = analysis.full_analysis(card)
-        list_results.append(output_result)
+        list_output_results.append(output_result)
 
     # Step 3: Create a gorgeous report!
     # Generate the report based on result list
-    reportmaker.make_full_report(list_results)
+    reportmaker.make_full_report(list_output_results)
 
