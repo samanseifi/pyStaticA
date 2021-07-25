@@ -6,7 +6,7 @@ The method for finidng the yield is the offset method with the value `<offset-va
 
 The code takes a text file as an input with multiple lines. Each line must have the following format:
 
-`<filename> <offset-value> <x-val1> <x-val2>`
+`<filename>` `<offset-value>` `<x-val1>` `<x-val2>`
 
 `<filename>`: The path to the data file consists of two columns of data (`xy_data`). Note: It can handle both `csv` and `txt` files.
 
